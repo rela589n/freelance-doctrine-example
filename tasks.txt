@@ -1,0 +1,67 @@
+Freelancer:
+ - view job
+ - write proposal to job
+ - edit written proposal (+delete)
+ - list of current jobs (in work)
+ - finished jobs
+
+Customer:
+ - Accept proposal
+ - explore jobs (list of all) - can't do anything
+ - list of jobs in work - can't delete
+ - list of finished jobs - can't delete
+
+
+** Steps **:
+ 20 (Customer explore) => 115
+ - Sidebar btn for explore
+ - Controller for explore
+ - view for explore
+
+ 30 (business) => 16
+ - Create JobStatus valueObject (new, in-work, finished)
+ - Create JobStatus db mapping
+ - Use this status in Jobs
+
+ 40 (Customer jobs in work) => 20
+ - Jobs in work sidebar btn+
+ - Jobs in work controller+
+ - Jobs in work repository+
+ - Jobs in work view+
+ **1
+
+ 30 (Customer finished jobs) => 10
+ - Jobs finished sidebar btn+
+ - Jobs finished controller+
+ - Jobs finished repository+
+ - Jobs finished view+
+ **1
+
+ 20 (Freelancer view job) => 3
+ - controller+
+ - view+
+
+ 40 (Freelancer write proposal to job page):
+ - view+
+ - controller+
+ - view for list on job page+
+
+ 40 (Freelancer edit written proposal):
+ - view (authorize can't edit if accepted)+
+ - controller+
+ - command+
+
+ 20 (Freelancer finished jobs):
+ - repository+
+ - controller+
+ - view+
+
+ 20 (Customer accept proposal):
+ - change status into in-work
+
+ 20 (Freelancer finish work on a job):
+ - change status into finished
+**1 Single job view links to the same controller action and view as default view (cuz it is responsible for authorization)
+
+// proposalStatus, з
+
