@@ -17,7 +17,7 @@ RUN apt-get update \
         unzip \
         cron
 
-RUN pecl install xdebug
+RUN pecl install xdebug-2.9.8
 RUN docker-php-ext-enable xdebug
 
 ADD ./php.ini /usr/local/etc/php/php.ini
